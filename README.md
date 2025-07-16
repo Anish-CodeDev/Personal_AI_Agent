@@ -24,7 +24,7 @@ This AI Agent is designed to manage your email inbox efficiently and intelligent
 | Layer            | Tech                                      |
 |------------------|-------------------------------------------|
 | Language Model   | Gemini 2.5 Flash-Lite Preview             |
-| Agentic Framework| Langgraph                                 |
+| Agentic Framework| LangGraph                                 |
 | Document Indexing| LlamaIndex                                |
 | Vector Store     | DeepLake                                  |
 | Email Integration| Gmail API(SMTP is used for sending emails)|
