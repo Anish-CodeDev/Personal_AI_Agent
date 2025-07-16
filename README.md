@@ -17,4 +17,15 @@ This AI Agent is designed to manage your email inbox efficiently and intelligent
 - Uses semantic retrieval for accurate and scalable responses
 
 ### Unified Interface
-- Both the email agent and the document(RAG) agent
+- Both the email agent and the document(RAG) agent are integrated into a single unified ReAct agent.
+- The agent can be accessed by a CLI interface, by running a python file, which gives access to the ReAct agent.
+
+## 🛠️ Technology Stack
+| Layer            | Tech                                      |
+|------------------|-------------------------------------------|
+| Language Model   | Gemini 2.5 Flash-Lite Preview             |
+| Agentic Framework| Langgraph                                 |
+| Document Indexing| LlamaIndex                                |
+| Vector Store     | DeepLake                                  |
+| Email Integration| Gmail API(SMTP is used for sending emails)|
+ 
