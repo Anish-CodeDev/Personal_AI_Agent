@@ -1,0 +1,12 @@
+email_agent/credentials.json
+email_agent/.env
+email_agent/token.json
+email_agent/models/
+email_agent/vocab/
+email_agent/.vector_cache/
+rag_agent/venv/
+rag_agent/status/
+rag_agent/local_vector_store/
+rag_agent/__pycache__/
+email_agent/test.py
+email_agent/file_upload.py
