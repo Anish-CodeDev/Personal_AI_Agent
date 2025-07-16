@@ -29,3 +29,14 @@ This AI Agent is designed to manage your email inbox efficiently and intelligent
 | Vector Store     | DeepLake                                  |
 | Email Integration| Gmail API(SMTP is used for sending emails)|
  
+## 📁 Setup Instructions
+1. Clone this repo
+2. Install dependencies:
+   `pip install -r requirements.txt`
+3. Fill in all the api keys where ever required.
+4. Running python files: You'll have to run two python files, one is the agent.py under the email_agent folder, thr other one is server.py under the rag_agent folder, the server.py holds the instructions of the `flask` server.
+   Go to the email_agent folder and run the following command:
+   `python agent.py`
+
+   Then go to the rag_agent folder and run the following command:
+   `flask --app server run`
