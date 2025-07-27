@@ -1,0 +1,16 @@
+core_agent/credentials.json
+core_agent/.env
+core_agent/token.json
+core_agent/models/
+core_agent/vocab/
+core_agent/venv/
+core_agent/.vector_cache/
+rag_agent/venv/
+rag_agent/status/
+rag_agent/local_vector_store/
+rag_agent/__pycache__/
+core_agent/test.py
+core_agent/file_upload.py
+core_agent/spam_detector_model.ipynb
+core_agent/spam_not_spam_model.py
+core_agent/subject_gen_model.ipynb
