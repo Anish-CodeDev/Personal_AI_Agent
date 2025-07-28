@@ -22,41 +22,38 @@ def get_result(query,tools):
     )
     return eval(str(re.sub('json','',response.text)))
 
-
-class MCPClient:
+class MCP_Client:
     def __init__(self):
         self.session:Optional[ClientSession] = None
         self.exit_stack = AsyncExitStack()
-    async def connect_to_maps_server(self,query):
-         server_params = StdioServerParameters(
+    
+    async def connect_to_server(self,path_to_file,query):
+        server_params = StdioServerParameters(
               command='python',
-              args=['D:\\Anish\\ComputerScience\\Computer science\\Machine Learning\\mcp\\mcp_servers\\maps\\server.py'],
+              args=[path_to_file],
               env=None
          )
-         stdio_transport = await self.exit_stack.enter_async_context(stdio_client(server_params))
-         self.read,self.write = stdio_transport
-         self.session = await self.exit_stack.enter_async_context(ClientSession(self.read,self.write))
-         await self.session.initialize()
-         response = await self.session.list_tools()
-         tools = response.tools
-         result = get_result(query,tools)
-         return result
-client = MCPClient()
-async def main(topic):
+        stdio_transport = await self.exit_stack.enter_async_context(stdio_client(server_params))
+        self.read,self.write = stdio_transport
+        self.session = await self.exit_stack.enter_async_context(ClientSession(self.read,self.write))
+        await self.session.initialize()
+        response = await self.session.list_tools()
+        tools = response.tools
+        result = get_result(query,tools)
+        return result
+
+client = MCP_Client()
+
+async def main(query,path_to_file):
     try:
-        result = await client.connect_to_maps_server(topic)
+        result = await client.connect_to_server(path_to_file,query)
         print(result)
         tool_name = result['tool']
         args = result['args']
         print(tool_name)
         print(args)
+
         response = await client.session.call_tool(tool_name,args)
         return response
-
-    except Exception as e:
-        print("Error: ",str(e))
     finally:
-         await client.exit_stack.aclose()
-
-
-#asyncio.run(main())
+        await client.exit_stack.aclose()

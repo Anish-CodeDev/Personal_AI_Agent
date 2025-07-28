@@ -16,8 +16,6 @@ import tkinter as tk
 from tkinter import filedialog
 import asyncio
 from mcp_client import main
-from mcp_client_deep_think import deep_research
-from mcp_client_autonomous_agent import autonomous_agent
 load_dotenv()
 client = genai.Client()
 smtp_server = "smtp.gmail.com"
@@ -129,18 +127,18 @@ def query_rag(query:str):
 @tool
 def maps(query:str):
     """This tool is used when the user has queries such as distance between two places"""
-    return asyncio.run(main(query))
+    return asyncio.run(main(query,'D:\\Anish\\ComputerScience\\Computer science\\Machine Learning\\mcp\\mcp_servers\\maps\\server.py'))
 
 @tool
 def research(message:str):
     """This tool is used when the user has queries regarding deep researching on a particular topic"""
-    return asyncio.run(deep_research("I want to deep research on the topic: " + message))
+    return asyncio.run(main("I want to deep research on the topic: " + message,'D:\\Anish\\ComputerScience\\Computer science\\Machine Learning\\mcp\\mcp_servers\\deep_research\\server.py'))
 
 @tool
 def auto_agent(message:str):
     """This tool is used when the user wants to perform tasks like booking hotels,booking movie tickets"""
     print(message)
-    return asyncio.run(autonomous_agent(message))
+    return asyncio.run(main(message,'D:\\Anish\\ComputerScience\\Computer science\\Machine Learning\\mcp\\mcp_servers\\autonomous_agent\\server.py'))
 
 @tool
 def upload_file():
