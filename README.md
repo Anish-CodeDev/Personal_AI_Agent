@@ -46,7 +46,7 @@ This AI Agent also has the feature of **autonomously browsing the web** using th
 - Filling online forms
 - Selecting specific elements
 ### Unified Interface
-- Both the email agent and the document(RAG) agent are integrated into a single unified ReAct agent.
+- Both the email agent and the document(RAG) agent,maps,deep research and autonomous browsing are integrated into a single unified ReAct agent.
 - The agent can be accessed by a CLI interface, by running a python file, which gives access to the ReAct agent.
 
 ## 🛠️ Technology Stack
@@ -57,6 +57,7 @@ This AI Agent also has the feature of **autonomously browsing the web** using th
 | Document Indexing| LlamaIndex                                |
 | Vector Store     | DeepLake                                  |
 | Email Integration| Gmail API(SMTP is used for sending emails)|
+|Autonomous browsing| Playwright                               | 
  
 ## 📁 Setup Instructions
 1. Clone this repo
