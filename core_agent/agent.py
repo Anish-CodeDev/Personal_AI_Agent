@@ -21,8 +21,8 @@ client = genai.Client()
 smtp_server = "smtp.gmail.com"
 port = 587
 context = ssl.create_default_context()
-email_id = 'akanish327@gmail.com'
-password = 'vvrw didd dabg uovh'
+email_id = '' # Enter your email-id
+password = '' # Enter your password
 approval = True
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
 mail.login(email_id,password)
