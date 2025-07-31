@@ -136,7 +136,7 @@ def research(message:str):
 
 @tool
 def auto_agent(message:str):
-    """This tool is used when the user wants to perform tasks like booking hotels,booking movie tickets"""
+    """This tool is used when the user wants to perform tasks like booking hotels,booking movie tickets and filling-out forms and selecting specific elements in a webpage like textbox by going to a specific website"""
     print(message)
     return asyncio.run(main(message,'D:\\Anish\\ComputerScience\\Computer science\\Machine Learning\\mcp\\mcp_servers\\autonomous_agent\\server.py'))
 
