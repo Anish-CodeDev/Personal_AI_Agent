@@ -4,7 +4,7 @@ import re
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from google import genai
-gemini = genai.Client(api_key='AIzaSyCFJ3RwiHvLTy9QYMhraasRH1D3h7zZ2G0')
+gemini = genai.Client(api_key='') # Enter your api key
 
 def get_result(query,tools):
     tools_with_desc = {
