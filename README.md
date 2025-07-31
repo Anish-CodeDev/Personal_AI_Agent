@@ -4,7 +4,7 @@ This AI Agent is designed to manage your email inbox efficiently and intelligent
 
 This AI Agent is also capable of conducting **deep research**, finding the **distance between two places** and offering **navigation between two places** with the help of `openrouteservice` API. 
 
-This AI Agent also has the feature of autonomously browsing the web using the `playwright` framework and a `VLM(Vision Language Model)`.
+This AI Agent also has the feature of **autonomously browsing the web** using the `playwright` framework and a `VLM(Vision Language Model)`.
 
 ## 🚀 Features
 ### Email Inbox Automation
@@ -29,6 +29,16 @@ This AI Agent also has the feature of autonomously browsing the web using the `p
 - Then we ask the `LLM` to generate a series of questions revolving around the topic asked by the user.
 - Then we collect the answers to all these questions by utilizing the `RAG Query Engine`
 - Then all the collected answers are compiled and the resultant is shown to the user.
+- This is maintained using a dedicated `MCP (Model Context Protocol) Server`.
+
+### Integration with GPS
+- With the help of `openrouteservice` API, the agent can calculate the distance between two points and also offers navigation between the two places
+- The LLM first captures the two places entered in the user's prompt and also figures out the task requested by the user.
+- The task may be either **navigation** or the calculation of **distance** between two places.
+- Using the `openrouteservice` API, the geo-coordinates of the places are retrieved using the names of the places mentioned by the user.
+- Accordingly, the geo-coordinates are fed into the API and the distance/navigation between two places is shown to the user
+- This is maintained using a dedicated `MCP (Model Context Protocol) Server`.
+### Autonomous browsing
 
 ### Unified Interface
 - Both the email agent and the document(RAG) agent are integrated into a single unified ReAct agent.
