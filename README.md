@@ -1,6 +1,10 @@
-# 📬 AI Inbox & Document Assistant
+# 📬 Personal AI Agent
 ## Overview
 This AI Agent is designed to manage your email inbox efficiently and intelligently respond to queries related to large, unstructured documents. It combines natural language understanding with retrieval-augmented generation to automate workflows and surface relevant information with minimal manual input.
+
+This AI Agent is also capable of conducting **deep research**, finding the **distance between two places** and offering **navigation between two places** with the help of `openrouteservice` API. 
+
+This AI Agent also has the feature of autonomously browsing the web using the `playwright` framework and a `VLM(Vision Language Model)`.
 
 ## 🚀 Features
 ### Email Inbox Automation
@@ -16,6 +20,16 @@ This AI Agent is designed to manage your email inbox efficiently and intelligent
 - Answers natural language queries with contextual precision
 - Uses semantic retrieval for accurate and scalable responses
 
+### Deep Research
+
+- With the help of this feature the user can get a complete research report, comprising of the meaning of the topic, its use cases, advantages and disadvantages.
+- This feature first extracts the topic from the user's prompt.
+- It then searches the web on the topic extracted
+- Then all the information is converted into embedding vectors using an `embedding model` and the embedding vectors are stored in the vector store.
+- Then we ask the `LLM` to generate a series of questions revolving around the topic asked by the user.
+- Then we collect the answers to all these questions by utilizing the `RAG Query Engine`
+- Then all the collected answers are compiled and the resultant is shown to the user.
+
 ### Unified Interface
 - Both the email agent and the document(RAG) agent are integrated into a single unified ReAct agent.
 - The agent can be accessed by a CLI interface, by running a python file, which gives access to the ReAct agent.
@@ -23,7 +37,7 @@ This AI Agent is designed to manage your email inbox efficiently and intelligent
 ## 🛠️ Technology Stack
 | Layer            | Tech                                      |
 |------------------|-------------------------------------------|
-| Language Model   | Gemini 2.5 Flash-Lite Preview             |
+| Language Model   | Gemini 2.5 Flash-Lite                     |
 | Agentic Framework| LangGraph                                 |
 | Document Indexing| LlamaIndex                                |
 | Vector Store     | DeepLake                                  |
