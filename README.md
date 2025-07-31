@@ -39,7 +39,12 @@ This AI Agent also has the feature of **autonomously browsing the web** using th
 - Accordingly, the geo-coordinates are fed into the API and the distance/navigation between two places is shown to the user
 - This is maintained using a dedicated `MCP (Model Context Protocol) Server`.
 ### Autonomous browsing
-
+- This agent can perform various autonomous such as:
+- Booking hotels(Choosing the best)
+- Booking movie tickets
+- Shopping for item(selects the best item based on the requirements of the user)
+- Filling online forms
+- Selecting specific elements
 ### Unified Interface
 - Both the email agent and the document(RAG) agent are integrated into a single unified ReAct agent.
 - The agent can be accessed by a CLI interface, by running a python file, which gives access to the ReAct agent.
