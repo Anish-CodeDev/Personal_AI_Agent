@@ -7,14 +7,14 @@ from  llama_index.llms.google_genai import GoogleGenAI
 from llama_index.vector_stores.deeplake import DeepLakeVectorStore
 import os
 from llama_index.postprocessor.cohere_rerank import CohereRerank
-os.environ['GOOGLE_API_KEY'] = 'AIzaSyCFJ3RwiHvLTy9QYMhraasRH1D3h7zZ2G0'
-os.environ['ACTIVELOOP_TOKEN'] = 'eyJhbGciOiJIUzUxMiIsImlhdCI6MTc1MjQxNTM1MywiZXhwIjoxNzgzOTUxMzQ0fQ.eyJpZCI6ImFrYW5pc2g0NDciLCJvcmdfaWQiOiJha2FuaXNoNDQ3In0.0LvHB3MAmmx_zZoVkqEa_taqfdgU6LtqRUBSuzyIcW4jS-igRJtNaBmb1R4ttwgsWGLY8iAoAp_ENharKghDyw'
+os.environ['GOOGLE_API_KEY'] = ''
+os.environ['ACTIVELOOP_TOKEN'] = ''
 llm = GoogleGenAI(model='gemini-2.5-flash-lite-preview-06-17')
 embed_model = GeminiEmbedding(models='model/embedding-001')
 Settings.llm = llm
 Settings.embed_model = embed_model
 dataset_path = f"hub://akanish447/personal_agent/"
-cohere_rerank = CohereRerank(api_key='UyZatwiADpPOFnEuws2nE7z5F3oP95JapKp2q6ER',top_n=10)
+cohere_rerank = CohereRerank(api_key='',top_n=10)
 
 def load_write_data(write):
     if write:
@@ -47,7 +47,7 @@ def load_write_csv(write):
     csv = SimpleDirectoryReader('csv/').load_data()
     node_parser = SimpleNodeParser(chunk_size=512)
     nodes = node_parser.get_nodes_from_documents(csv)
-    cohere_rerank_csv = CohereRerank(api_key='UyZatwiADpPOFnEuws2nE7z5F3oP95JapKp2q6ER',top_n=2)
+    cohere_rerank_csv = CohereRerank(api_key='',top_n=2)
     
     if write:
         index = VectorStoreIndex(nodes=nodes)
