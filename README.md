@@ -29,7 +29,7 @@ This AI Agent also has the feature of **autonomously browsing the web** using th
 - Then we ask the `LLM` to generate a series of questions revolving around the topic asked by the user.
 - Then we collect the answers to all these questions by utilizing the `RAG Query Engine`
 - Then all the collected answers are compiled and the resultant is shown to the user.
-- This is maintained using a dedicated `MCP (Model Context Protocol) Server`.
+- This is maintained using a dedicated `MCP (Model Context Protocol) Server`. (**Github link:** https://github.com/Anish-CodeDev/mcp_servers/tree/main/deep_research)
 
 ### Integration with GPS
 - With the help of `openrouteservice` API, the agent can calculate the distance between two points and also offers navigation between the two places
@@ -37,7 +37,7 @@ This AI Agent also has the feature of **autonomously browsing the web** using th
 - The task may be either **navigation** or the calculation of **distance** between two places.
 - Using the `openrouteservice` API, the geo-coordinates of the places are retrieved using the names of the places mentioned by the user.
 - Accordingly, the geo-coordinates are fed into the API and the distance/navigation between two places is shown to the user
-- This is maintained using a dedicated `MCP (Model Context Protocol) Server`.
+- This is maintained using a dedicated `MCP (Model Context Protocol) Server`. (**Github link:** https://github.com/Anish-CodeDev/mcp_servers/tree/main/maps)
 ### Autonomous browsing
 - This agent can perform various autonomous such as:
 - Booking hotels(Choosing the best)
@@ -45,6 +45,7 @@ This AI Agent also has the feature of **autonomously browsing the web** using th
 - Shopping for item(selects the best item based on the requirements of the user)
 - Filling online forms
 - Selecting specific elements
+- This too is managed using a dedicated `MCP(Model Context Protocol) Server`. (**Github link:** https://github.com/Anish-CodeDev/mcp_servers/tree/main/autonomous_agent)
 ### Unified Interface
 - Both the email agent and the document(RAG) agent,maps,deep research and autonomous browsing are integrated into a single unified ReAct agent.
 - The agent can be accessed by a CLI interface, by running a python file, which gives access to the ReAct agent.
